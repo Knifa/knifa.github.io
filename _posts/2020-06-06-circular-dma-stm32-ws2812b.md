@@ -58,7 +58,9 @@ this:
 - Bit level is defined by the duty cycle (i.e., duration spent high).
   - Low (0) at 32% duty (0.4µs).
   - High (1) at 62% duty (0.8µs).
-- Each LED expects 24 bits of colour data: GRB ordering (instead of RGB), 8 bits per channel,
+- Each LED expects 24 bits of colour data: <span style="color:green">G</span><span style="color:red">R</span><span style="color:blue">B</span>
+  ordering (green, red, blue --- instead of the usual
+  RGB), 8 bits per channel,
   MSB-first. Any number of bits sent after the initial 24 is passed on to the next LED in
   succession.
 - Once all bits are sent, the signal must be held low for at least 50µs to reset and complete
