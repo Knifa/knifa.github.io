@@ -102,7 +102,7 @@ We create some defines to help us later on, and initialize our buffers and relat
 #define BUFFER_L_OFFSET 0
 #define BUFFER_H_OFFSET BUFFER_LEN_HALF
 
-// Each element represents the BRG value for that LED index e.g., 0x00ffffff is
+// Each element represents the GRB value for that LED index e.g., 0x00ffffff is
 // full white, 0x00ff0000 is full blue, etc.
 uint32_t grb[LED_COUNT];
 
@@ -205,7 +205,7 @@ buffer?
 ### Filling The Buffer
 
 Filling the buffer is straight-forward. Some bit shifting and masking gets us the individual bits of
-the BRG value, which we can then use to insert the correct duty into the buffer.
+the GRB value, which we can then use to insert the correct duty into the buffer.
 
 {% highlight c %}
 void led_fill_buffer(uint32_t offset, uint32_t length) {
@@ -213,7 +213,7 @@ void led_fill_buffer(uint32_t offset, uint32_t length) {
     uint32_t grb_i = grb_offset + (i / LED_BPP);
 
     if (grb_i >= LED_COUNT) {
-      // Pad anything outside of the BRG buffer range with resets (0% duty).
+      // Pad anything outside of the GRB buffer range with resets (0% duty).
       buffer[i] = DUTY_RESET;
     } else {
       // Since the LEDs expect MSB-first, we need to do some fiddling to fire
