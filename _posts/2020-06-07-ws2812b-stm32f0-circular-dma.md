@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Driving WS2812B LED Strips with an STM32F0, Timers, and Circular DMA
-date:   2020-06-06
+date:   2020-06-07
 categories: stm32
 ---
 
