@@ -1,0 +1,25 @@
+---
+---
+
+$text-color: black;
+$background-color: white;
+$brand-color: #8bc34a;
+
+@import "minima";
+
+.site-title {
+  font-weight: normal;
+  float: none;
+}
+
+.site-logo {
+  height: 36px;
+  margin-bottom: calc((54px / 2) - (36px / 2));
+  margin-right: 2px;
+}
+
+.post img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
