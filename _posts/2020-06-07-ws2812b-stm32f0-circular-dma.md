@@ -2,7 +2,7 @@
 layout: post
 title:  Driving WS2812B LED Strips with an STM32F0, Timers, and Circular DMA
 date:   2020-06-06
-categories: stm32 ws2182b leds embedded
+categories: stm32
 ---
 
 Common individually-addressable RGB LED strips (e.g., NeoPixels, WS2812B, etc.) are controllable via
@@ -345,7 +345,7 @@ Since GRB is a garbage format and everyone loves <span style="color:red">R</span
 instead, here's a bonus macro you can use to convert individual RGB bytes to GRB words:
 
 {% highlight c %}
-#define RGB_WORD(R, G, B) (((G) << 16) | ((R) << 8) | (B))
+#define GRB_WORD(R, G, B) (((G) << 16) | ((R) << 8) | (B))
 {% endhighlight %}
 
 
@@ -367,4 +367,4 @@ Here's some useful documents I looked at to figure this all out:
 
 - [WS2812B datasheet](https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf)
 - [STM32F0 datasheet](https://www.st.com/resource/en/datasheet/stm32f030f4.pdf])
-- [STM32F0 proggramming guide](https://www.st.com/resource/en/reference_manual/dm00091010-stm32f030x4-x6-x8-xc-and-stm32f070x6-xb-advanced-arm-based-32-bit-mcus-stmicroelectronics.pdf)
+- [STM32F0 programming guide](https://www.st.com/resource/en/reference_manual/dm00091010-stm32f030x4-x6-x8-xc-and-stm32f070x6-xb-advanced-arm-based-32-bit-mcus-stmicroelectronics.pdf)
