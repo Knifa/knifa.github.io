@@ -364,5 +364,5 @@ Thanks for reading! 👋
 Here's some useful documents I looked at to figure this all out:
 
 - [WS2812B datasheet](https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf)
-- STM32F0 datasheet
-- STM32F0 proggramming guide
+- [STM32F0 datasheet](https://www.st.com/resource/en/datasheet/stm32f030f4.pdf])
+- [STM32F0 proggramming guide](https://www.st.com/resource/en/reference_manual/dm00091010-stm32f030x4-x6-x8-xc-and-stm32f070x6-xb-advanced-arm-based-32-bit-mcus-stmicroelectronics.pdf)
