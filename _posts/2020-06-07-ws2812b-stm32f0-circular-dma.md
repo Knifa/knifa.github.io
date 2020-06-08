@@ -32,11 +32,11 @@ maintain.
 Each element in our buffer is a byte which represents the duty for that timer cycle. Given that we
 have a limited amount of memory available --- just 4KB --- it would be unwise for us try and stuff
 the entire sequence into the buffer all at once! If we had 100 LEDs, this would require 2.4KB
-(100 × 24 × 8 bits) of memory which leaves little left for anything else.
+(100 × 24 bits) of memory which leaves little left for anything else.
 
 So, the way round this is to limit the buffer to a smaller size and fill it with more data as we go
 along. The DMA peripheral can raise an interrupt when it's both half-way and all the way through the
-buffer, letting us fill it with more data each time. If configure the DMA to run in circular mode
+buffer, letting us fill it with more data each time. If we configure the DMA to run in circular mode
 (i.e., once it reaches the end of the buffer, it wraps round to the beginning of the buffer again),
 we can continually fill each half with data while it bangs out the other half.
 
@@ -105,7 +105,7 @@ We create some defines to help us later on, and initialize our buffers and relat
 #define BUFFER_H_OFFSET BUFFER_LEN_HALF
 
 // Each element represents the GRB value for that LED index e.g., 0x00ffffff is
-// full white, 0x00ff0000 is full blue, etc.
+// full white, 0x00ff0000 is full green, etc.
 uint32_t grb[LED_COUNT];
 
 // Offset into the GRB array as we output the LEDs.
