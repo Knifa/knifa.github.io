@@ -263,7 +263,6 @@ void DMA1_Channel4_5_IRQHandler() {
 
     // Fill the lower half of the buffer as the top half is now being read.
     led_fill_buffer(BUFFER_L_OFFSET, BUFFER_LEN_HALF);
-    rgb_offset += BUFFER_LED_COUNT_HALF;
 
     LL_DMA_ClearFlag_HT5(DMA1);
   } else if (LL_DMA_IsActiveFlag_TC5(DMA1)) {
@@ -279,7 +278,7 @@ void DMA1_Channel4_5_IRQHandler() {
 
     // Fill the upper half of the buffer as the lower half is now being read.
     led_fill_buffer(BUFFER_H_OFFSET, BUFFER_LEN_HALF);
-    rgb_offset += BUFFER_LED_COUNT_HALF;
+    rgb_offset += BUFFER_LED_COUNT;
 
     LL_DMA_ClearFlag_TC5(DMA1);
   }
